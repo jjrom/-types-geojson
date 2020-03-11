@@ -1,0 +1,20 @@
+{
+    "name": "@types/geojson",
+    "version": "7946.0.1",
+    "description": "Typescript definitions for GeoJSON Feature with additionnal STAC element",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/jjrom/geojson.ts.git"
+    },
+    "keywords": [
+      "geojson",
+      "stac"
+    ],
+    "author": "Jérôme Gasperi",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/jjrom/geojson.ts/issues"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+  }
