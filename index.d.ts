@@ -155,7 +155,7 @@ export type GeoJsonSTACAssets = { [name: string]: any; } | null;
  * A feature object which contains a geometry and associated properties.
  * https://tools.ietf.org/html/rfc7946#section-3.2
  */
-export interface Feature<G extends Geometry | null = Geometry, P = GeoJsonProperties, L = GeoJsonSTACLinks, A = GeoJsonSTACAssets> extends GeoJsonObject {
+export interface Feature<G extends Geometry | null = Geometry, P = GeoJsonProperties, L = GeoJsonSTACLinks, A = GeoJsonSTACAssets > extends GeoJsonObject {
     type: "Feature";
     /**
      * The feature's geometry
@@ -171,6 +171,14 @@ export interface Feature<G extends Geometry | null = Geometry, P = GeoJsonProper
      */
     properties: P;
     /**
+     * [STAC] Collection associated with this feature
+     */
+    collection?: string;
+    /**
+     * [STAC] BBOX associated with this feature
+     */
+    bbox?: BBox;
+    /**
      * [STAC] Links associated with this feature
      */
     links?: L;
@@ -178,13 +186,14 @@ export interface Feature<G extends Geometry | null = Geometry, P = GeoJsonProper
      * [STAC] Assets associated with this feature
      */
     assets?: A;
+
 }
 
 /**
  * A collection of feature objects.
  *  https://tools.ietf.org/html/rfc7946#section-3.3
  */
-export interface FeatureCollection<G extends Geometry | null = Geometry, P = GeoJsonProperties, L = GeoJsonSTACLinks, A = GeoJsonSTACAssets> extends GeoJsonObject {
+export interface FeatureCollection<G extends Geometry | null = Geometry, P = GeoJsonProperties, L = GeoJsonSTACLinks, A = GeoJsonSTACAssets, B = BBox> extends GeoJsonObject {
     type: "FeatureCollection";
     features: Array<Feature<G, P, L, A>>;
 }
