@@ -173,7 +173,7 @@ export interface Feature<G extends Geometry | null = Geometry, P = GeoJsonProper
     /**
      * [STAC] Collection associated with this feature
      */
-    collection?: string;
+    collection?: string | null;
     /**
      * [STAC] BBOX associated with this feature
      */
