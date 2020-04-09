@@ -193,7 +193,16 @@ export interface Feature<G extends Geometry | null = Geometry, P = GeoJsonProper
  * A collection of feature objects.
  *  https://tools.ietf.org/html/rfc7946#section-3.3
  */
-export interface FeatureCollection<G extends Geometry | null = Geometry, P = GeoJsonProperties, L = GeoJsonSTACLinks, A = GeoJsonSTACAssets, B = BBox> extends GeoJsonObject {
+export interface FeatureCollection<G extends Geometry | null = Geometry, P = GeoJsonProperties, L = GeoJsonSTACLinks, A = GeoJsonSTACAssets> extends GeoJsonObject {
     type: "FeatureCollection";
+    /**
+     * [STAC] Links associated with this FeatureCollection
+     */
+    links?: L;
+    /**
+     * [STAC] Context Extension specification 
+     * https://github.com/radiantearth/stac-api-spec/tree/dev/extensions/context
+     */
+    context?: P;
     features: Array<Feature<G, P, L, A>>;
 }
